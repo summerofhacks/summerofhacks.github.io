@@ -8,8 +8,6 @@ var htmlmin = require('gulp-html-minifier');
 var inlinesource = require('gulp-inline-source');
 var uglify = require('gulp-uglify');
 var less = require('gulp-less');
-var ghPages = require('gulp-gh-pages');
-var awspublish = require('gulp-awspublish');
 var RevAll = require('gulp-rev-all');
 var data = require('gulp-data');
 var handlebars = require('gulp-compile-handlebars');
@@ -31,7 +29,7 @@ var paths = {
 
 gulp.task('html', function() {
   return gulp.src('src/index.html')
-    .pipe(data(eventData('events/2016/*.md')))
+    .pipe(data(eventData('events/2019/*.md')))
     .pipe(handlebars(null, {
       helpers: {
         short_date: function(str) {return moment(str).format("Do MMM");}
@@ -99,43 +97,6 @@ gulp.task('serve', ['build'], function() {
     livereload: true
   });
 });
-
-
-gulp.task('deploy:gh', ['build.dist'], function() {
-
-  var options = {};
-
-  if('GH_LOGIN' in process.env)
-    options = {
-      remoteUrl:'https://' + process.env.GH_LOGIN + ':' + process.env.GH_TOKEN + '@github.com/jsoxford/summerofhacks.github.io.git'
-    };
-
-  return gulp.src('build/**/*')
-    .pipe(ghPages(options));
-});
-
-gulp.task('deploy:aws', ['build.dist'], function() {
-
-  var publisher = awspublish.create({
-    params: {
-      Bucket: "summerofhacks.io"
-    },
-    region: 'eu-west-1',
-    accessKeyId: process.env.AWS_KEY,
-    secretAccessKey: process.env.AWS_SECRET
-  });
-
-  var revAll = new RevAll({
-    dontRenameFile: [/^\/favicon\.ico$/g, /^\/.*\.html/g]
-  });
-
-  return gulp.src('build/*')
-    .pipe(revAll.revision())
-    .pipe(publisher.publish())
-    .pipe(publisher.cache())
-    .pipe(awspublish.reporter());
-});
-
 
 gulp.task('build',      ['html', 'less', 'js', 'sw', 'assets']);
 gulp.task('build.dist', ['html.dist', 'less', 'js.dist', 'assets']);
