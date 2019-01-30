@@ -1,8 +1,12 @@
 {
-  "name": "SummerOfHacks",
+  "name": "summerofhacks-web",
   "description": "The Summer of Hacks website, http://summerofhacks.io",
-  "author": "",
   "version": "3.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/summer-of-hacks/soh19website"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.2.0",
