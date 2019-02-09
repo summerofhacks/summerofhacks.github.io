@@ -4,7 +4,7 @@ date: 2019-07-13
 actions:
   -
     title: Sign up for Nodeschool
-    url: http://www.meetup.com/JSOxford/events/231241282/
+    url: https://www.meetup.com/Summer-Of-Hacks-Oxford/events/258794540/
 ---
 
 NodeSchool is a collection of workshops that help you learn JavaScript by writing code and solving challenges. The event is for everyone, whether you've never written a line of JavaScript before or you're a pro; NodeSchool has challenges and activities for all different levels.
