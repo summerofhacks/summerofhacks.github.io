@@ -1,6 +1,6 @@
 before_install:
-  - git config --global user.name "JSOxbot"
-  - git config --global user.email "jsoxford@whiteoctober.co.uk";
+  - git config --global user.name "sohox"
+  - git config --global user.email "ox.summer.of.hacks@gmail.com";
 branches:
   only:
     - master
