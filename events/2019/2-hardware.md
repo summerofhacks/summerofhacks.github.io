@@ -12,7 +12,8 @@ learning about hardware. There are no minimum entry requirements other than an
 inquisitive mind.
 
 If you've never touched a breadboard before, that's fine: we’re bringing some
-starter packs, complete with Espruino boards and components and plenty of
+starter packs, complete with wires and components and all the fun
+gizmos and doodads. We'll also have plenty of
 helpful people to guide you. If you're a bit more experienced that's great too,
 as you'll get to play with some new kit or hack on a project with like-minded people.
 
